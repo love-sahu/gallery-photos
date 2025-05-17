@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .Smallimg img {
+        height: 92px;
+        margin: 10px;
+        cursor: pointer;
+        display: block;
+
+        filter: blur(1.6px);
+      }
+      .Smallimg img:hover {
+        filter: blur(0);
+      }
+      .Smallimg {
+        float: left;
+      }
+      .bigbox img {
+        height: 500px;
+      }
+      .bigbox {
+        float: right;
+        position: relative;
+        top: 10px;
+        left: 10px;
+      }
+      .images {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+      }
+      body{
+        background-color: black;
+      }
+      .next{
+        display: flex;
+      }
+      .next button{
+       position: relative;
+        top: 7px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="images">
+      <div class="Smallimg">
+        <img src="/images/img2.jpg" onclick="myfunction(this)"  style="width: 100px;">
+        <img src="/images/img3.jpg" onclick="myfunction(this)" style="width: 100px;">
+        <img src="/images/img5.jpeg" onclick="myfunction(this)"style="width: 100px;">
+        <img src="/images/img6.jpeg" onclick="myfunction(this)" style="width: 100px;">
+        <img src="/images/img1.jpg" onclick="myfunction(this)" style="width: 100px;">
+      </div>
+      <div class="next">
+      <div class="bigbox">
+        <img id="imagebox" src="/images/img2.jpg" style="width: 600px;">
+      </div>
+      <!-- <button class="btn">next1</button> -->
+    </div>
+    </div>
+
+    <script>
+      function myfunction(smallimg) {
+        var fullimg = document.getElementById("imagebox");
+        fullimg.src = smallimg.src;
+      }
+    </script>
+  </body>
+</html>
